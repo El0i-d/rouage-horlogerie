@@ -531,6 +531,33 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; line-height: 1.1; 
 
 .hand-second { stroke: var(--signature-bright); stroke-width: 1.3; stroke-linecap: round; }
 
+/* ---- Pièces du mouvement ---- */
+.perlage circle { fill: none; stroke: rgba(201, 166, 104, 0.055); stroke-width: 0.6; }
+.plate { fill: rgba(201, 166, 104, 0.05); stroke: rgba(201, 166, 104, 0.3); stroke-width: 0.9; }
+.cotes path { fill: none; stroke: rgba(201, 166, 104, 0.11); stroke-width: 0.6; }
+
+.gear-teeth-path { fill: none; stroke: var(--gold); stroke-width: 1; stroke-linejoin: round; }
+.gear-teeth-path-alt { fill: none; stroke: var(--gold-deep); stroke-width: 0.9; stroke-linejoin: round; }
+.escape-wheel { fill: none; stroke: var(--gold); stroke-width: 1; stroke-linejoin: round; }
+
+.mainspring { fill: none; stroke: var(--gold-deep); stroke-width: 0.75; opacity: 0.7; }
+.spiral-balancier { fill: none; stroke: var(--gold-bright); stroke-width: 0.7; opacity: 0.85; }
+.balance-rim { fill: none; stroke: var(--gold); stroke-width: 2.2; }
+.spoke line { stroke: var(--gold-deep); stroke-width: 1.5; stroke-linecap: round; }
+
+.ancre { fill: none; stroke: var(--gold); stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.rubis circle { fill: var(--signature-bright); }
+.vis circle { fill: none; stroke: var(--gold-deep); stroke-width: 0.9; }
+.vis line { stroke: var(--gold-deep); stroke-width: 1.2; stroke-linecap: round; }
+
+/* La roue d'échappement avance ; le balancier, lui, oscille —
+   c'est ce contraste de mouvement qui rend la scène vivante. */
+.spin-echap { animation: spin 26s linear infinite; }
+.balancier { transform-origin: 146px 320px; animation: oscille 2.4s ease-in-out infinite alternate; }
+.ancre { transform-origin: 232px 316px; animation: bascule 2.4s ease-in-out infinite alternate; }
+@keyframes oscille { from { transform: rotate(-32deg); } to { transform: rotate(32deg); } }
+@keyframes bascule { from { transform: rotate(-6deg); } to { transform: rotate(6deg); } }
+
 /* =========================================================
    Cadrans (cartes pièces)
    ========================================================= */
@@ -569,7 +596,7 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; line-height: 1.1; 
    ========================================================= */
 .collection-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
   gap: 1px;
   background: var(--line);
   border-block: 1px solid var(--line);
@@ -783,14 +810,14 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; line-height: 1.1; 
   width: 15rem;
 }
 .specs-table td { color: var(--text-soft); font-weight: 300; }
-.specs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: clamp(2rem, 5vw, 4rem); }
+.specs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: clamp(2rem, 5vw, 4rem); }
 
 /* =========================================================
    Journal
    ========================================================= */
 .journal-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
   gap: clamp(1.6rem, 3vw, 2.6rem);
 }
 .journal-card {
@@ -1011,8 +1038,15 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; line-height: 1.1; 
   .menu-toggle { display: flex; }
   .service-row { grid-template-columns: 3rem 1fr; }
   .service-row p { grid-column: 2; }
-  .key-points li, .specs-table th { grid-template-columns: 1fr; }
-  .specs-table th, .specs-table td { display: block; width: auto; }
+  .key-points li { grid-template-columns: 1fr; }
+  /* Empiler les cellules ne suffit pas : tant que la table et ses lignes
+     restent en mode tableau, elles reprennent leur largeur intrinsèque et
+     débordent du conteneur. Toute la structure doit passer en bloc. */
+  .specs-table,
+  .specs-table tbody,
+  .specs-table tr,
+  .specs-table th,
+  .specs-table td { display: block; width: 100%; }
   .specs-table th { padding-bottom: 0.2rem; border-bottom: 0; }
   .footer-bottom { flex-direction: column; align-items: flex-start; }
 }

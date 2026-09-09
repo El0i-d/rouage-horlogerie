@@ -171,48 +171,73 @@
           <line x1="122.9" y1="337.1" x2="107.4" y2="352.6" />
         </g>
 
-        <!-- Grand rouage central -->
+        <!-- Platine perlée, sous toutes les pièces -->
+        <g class="perlage" data-perlage data-cx="230" data-cy="230" data-r="158" data-step="15" data-dot="9.5"></g>
+
+        <!-- Ponts, ornés de côtes de Genève -->
+        <path class="plate" data-plate data-cx="230" data-cy="230" data-ri="92" data-ro="152" data-a1="-78" data-a2="26" />
+        <g class="cotes" data-cotes data-cx="230" data-cy="230" data-ri="97" data-ro="148" data-a1="-74" data-a2="22" data-step="7"></g>
+        <path class="plate" data-plate data-cx="230" data-cy="230" data-ri="92" data-ro="150" data-a1="116" data-a2="206" />
+        <g class="cotes" data-cotes data-cx="230" data-cy="230" data-ri="97" data-ro="146" data-a1="120" data-a2="202" data-step="7"></g>
+
+        <!-- Barillet : ressort moteur enroulé sous sa denture -->
+        <g class="spin-b" style="transform-origin: 146px 156px">
+          <path class="gear-teeth-path" data-gear data-cx="146" data-cy="156" data-ro="56" data-ri="49" data-teeth="44" data-ratio="0.4" />
+          <circle cx="146" cy="156" r="45" class="ring-hair" />
+          <path class="mainspring" data-spiral data-cx="146" data-cy="156" data-r0="10" data-r1="41" data-turns="7" />
+          <circle cx="146" cy="156" r="8" class="gear-hub" />
+        </g>
+
+        <!-- Grande roue centrale -->
         <g class="spin-a" style="transform-origin: 230px 230px">
-          <circle cx="230" cy="230" r="84" class="gear-body" />
-          <circle cx="230" cy="230" r="66" class="ring-hair" />
-          <g class="gear-teeth">
-            <rect x="225" y="138" width="10" height="18" />
-            <rect x="225" y="304" width="10" height="18" />
-            <rect x="138" y="225" width="18" height="10" />
-            <rect x="304" y="225" width="18" height="10" />
-            <rect x="176.6" y="160.6" width="10" height="18" transform="rotate(45 181.6 169.6)" />
-            <rect x="273.4" y="160.6" width="10" height="18" transform="rotate(-45 278.4 169.6)" />
-            <rect x="176.6" y="281.4" width="10" height="18" transform="rotate(-45 181.6 290.4)" />
-            <rect x="273.4" y="281.4" width="10" height="18" transform="rotate(45 278.4 290.4)" />
-          </g>
+          <path class="gear-teeth-path" data-gear data-cx="230" data-cy="230" data-ro="86" data-ri="78" data-teeth="64" data-ratio="0.38" />
+          <circle cx="230" cy="230" r="72" class="ring-hair" />
+          <g class="spoke" data-spokes data-cx="230" data-cy="230" data-r0="12" data-r1="71" data-count="5" data-offset="-90"></g>
+          <circle cx="230" cy="230" r="20" class="ring-hair" />
           <circle cx="230" cy="230" r="9" class="gear-hub" />
         </g>
 
-        <!-- Rouages secondaires -->
-        <g class="spin-b" style="transform-origin: 128px 162px">
-          <circle cx="128" cy="162" r="34" class="gear-body-alt" />
-          <g class="gear-teeth-alt">
-            <rect x="125" y="123" width="6" height="11" />
-            <rect x="125" y="190" width="6" height="11" />
-            <rect x="89" y="159" width="11" height="6" />
-            <rect x="156" y="159" width="11" height="6" />
-          </g>
-          <circle cx="128" cy="162" r="5" class="gear-body-alt" />
+        <!-- Roue intermédiaire -->
+        <g class="spin-c" style="transform-origin: 322px 168px">
+          <path class="gear-teeth-path-alt" data-gear data-cx="322" data-cy="168" data-ro="34" data-ri="29" data-teeth="30" data-ratio="0.4" />
+          <g class="spoke" data-spokes data-cx="322" data-cy="168" data-r0="6" data-r1="27" data-count="4" data-offset="20"></g>
+          <circle cx="322" cy="168" r="5" class="gear-body-alt" />
         </g>
 
-        <g class="spin-c" style="transform-origin: 330px 318px">
-          <circle cx="330" cy="318" r="26" class="gear-body-alt" />
-          <g class="gear-teeth-alt">
-            <rect x="327" y="288" width="6" height="10" />
-            <rect x="327" y="338" width="6" height="10" />
-            <rect x="300" y="315" width="10" height="6" />
-            <rect x="350" y="315" width="10" height="6" />
-          </g>
+        <!-- Roue d'échappement -->
+        <g class="spin-echap" style="transform-origin: 316px 302px">
+          <path class="escape-wheel" data-escape data-cx="316" data-cy="302" data-ro="30" data-ri="19" data-teeth="15" />
+          <g class="spoke" data-spokes data-cx="316" data-cy="302" data-r0="5" data-r1="18" data-count="3" data-offset="0"></g>
         </g>
 
-        <!-- Balancier stylisé -->
-        <circle cx="150" cy="310" r="30" class="ring-faint" />
-        <circle cx="150" cy="310" r="21" class="gear-body-alt" />
+        <!-- Ancre : bascule au rythme du balancier -->
+        <g class="ancre">
+          <path d="M232 316 L292 306 M232 316 L288 284 M232 316 L196 324" />
+          <circle cx="232" cy="316" r="4.5" />
+          <rect x="288" y="300" width="9" height="5" rx="1.5" transform="rotate(-9 292 302)" />
+          <rect x="284" y="279" width="9" height="5" rx="1.5" transform="rotate(-32 288 281)" />
+        </g>
+
+        <!-- Balancier et son spiral -->
+        <g class="balancier">
+          <circle cx="146" cy="320" r="46" class="balance-rim" />
+          <circle cx="146" cy="320" r="40" class="ring-hair" />
+          <g class="spoke" data-spokes data-cx="146" data-cy="320" data-r0="7" data-r1="41" data-count="2" data-offset="14"></g>
+          <path class="spiral-balancier" data-spiral data-cx="146" data-cy="320" data-r0="4" data-r1="31" data-turns="8" />
+          <circle cx="146" cy="320" r="5" class="gear-hub" />
+        </g>
+
+        <!-- Rubis et vis -->
+        <g class="rubis">
+          <circle cx="146" cy="156" r="3.4" /><circle cx="322" cy="168" r="3.4" />
+          <circle cx="316" cy="302" r="3.4" /><circle cx="232" cy="316" r="2.8" />
+        </g>
+        <g class="vis">
+          <circle cx="330" cy="236" r="6" /><line x1="325" y1="234" x2="335" y2="238" />
+          <circle cx="196" cy="118" r="6" /><line x1="191" y1="116" x2="201" y2="120" />
+          <circle cx="128" cy="240" r="6" /><line x1="123" y1="238" x2="133" y2="242" />
+          <circle cx="268" cy="356" r="6" /><line x1="263" y1="354" x2="273" y2="358" />
+        </g>
 
         <!-- Aiguille des secondes, tour complet en 60 s -->
         <g class="sweep" style="transform-origin: 230px 230px">
