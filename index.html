@@ -1,0 +1,352 @@
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Rouage — Manufacture indépendante</title>
+<meta
+  name="description"
+  content="Rouage conçoit des montres à mouvement apparent, pensées comme des instruments de précision plutôt que comme des bijoux."
+/>
+<meta name="theme-color" content="#0b0906" />
+<meta name="robots" content="noindex" />
+
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500;600&family=Public+Sans:wght@300;400;500;600&display=swap"
+  rel="stylesheet"
+/>
+
+<link rel="stylesheet" href="styles.css" />
+
+<div class="bg-vignette" aria-hidden="true"></div>
+<div class="bg-grain" aria-hidden="true"></div>
+
+<a class="skip-link" href="#main">Aller au contenu</a>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="top">
+  <div class="wrap header-inner">
+    <a href="#top" class="logo" aria-label="Rouage — accueil">
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="16" cy="16" r="10.5" stroke="currentColor" stroke-width="1.1" />
+          <circle cx="16" cy="16" r="2" fill="currentColor" />
+          <g stroke="currentColor" stroke-width="1.1">
+            <line x1="16" y1="2.5" x2="16" y2="6.5" />
+            <line x1="16" y1="25.5" x2="16" y2="29.5" />
+            <line x1="2.5" y1="16" x2="6.5" y2="16" />
+            <line x1="25.5" y1="16" x2="29.5" y2="16" />
+          </g>
+        </svg>
+      </span>
+      <span class="logo-text">ROUAGE</span>
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Navigation principale">
+      <a href="#collection">Collection</a>
+      <a href="#philosophie">Philosophie</a>
+      <a href="#atelier">Atelier</a>
+      <a href="#contact" class="nav-cta">Nous écrire</a>
+    </nav>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+  <!-- ============ HERO ============ -->
+  <section class="hero wrap" aria-labelledby="hero-title">
+    <div class="hero-copy">
+      <p class="eyebrow reveal">Manufacture indépendante</p>
+
+      <h1 id="hero-title" class="reveal">
+        Ici, le mécanisme n'est pas caché.
+        <span class="accent">Il est la pièce maîtresse.</span>
+      </h1>
+
+      <p class="hero-sub reveal">
+        Rouage conçoit des montres à mouvement apparent — pensées comme des
+        instruments de précision, montées à la main, en séries volontairement
+        restreintes.
+      </p>
+
+      <div class="hero-actions reveal">
+        <a href="#collection" class="btn btn-primary">Découvrir la collection</a>
+        <a href="#philosophie" class="btn btn-ghost">Notre philosophie</a>
+      </div>
+
+      <ul class="hero-specs reveal" aria-label="Caractéristiques">
+        <li>Mouvement automatique</li>
+        <li>Boîtier acier &amp; bronze</li>
+        <li>Séries limitées à 100 pièces</li>
+      </ul>
+    </div>
+
+    <div class="hero-visual reveal" aria-hidden="true">
+      <svg class="movement-art" viewBox="0 0 420 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="210" cy="210" r="178" class="ring-faint" />
+        <circle cx="210" cy="210" r="150" class="ring-faint" />
+        <g class="index-ticks">
+          <line x1="210" y1="34" x2="210" y2="54" />
+          <line x1="210" y1="366" x2="210" y2="386" />
+          <line x1="34" y1="210" x2="54" y2="210" />
+          <line x1="366" y1="210" x2="386" y2="210" />
+          <line x1="98.8" y1="98.8" x2="113.1" y2="113.1" />
+          <line x1="306.9" y1="306.9" x2="321.2" y2="321.2" />
+          <line x1="321.2" y1="98.8" x2="306.9" y2="113.1" />
+          <line x1="113.1" y1="306.9" x2="98.8" y2="321.2" />
+        </g>
+
+        <g class="gear gear-lg">
+          <circle cx="210" cy="210" r="72" class="gear-body" />
+          <g class="gear-teeth">
+            <rect x="206" y="132" width="8" height="16" />
+            <rect x="206" y="282" width="8" height="16" />
+            <rect x="132" y="206" width="16" height="8" />
+            <rect x="272" y="206" width="16" height="8" />
+            <rect x="163.5" y="149.8" width="8" height="16" transform="rotate(45 167.5 157.8)" />
+            <rect x="252.5" y="149.8" width="8" height="16" transform="rotate(-45 256.5 157.8)" />
+            <rect x="163.5" y="254.2" width="8" height="16" transform="rotate(-45 167.5 262.2)" />
+            <rect x="252.5" y="254.2" width="8" height="16" transform="rotate(45 256.5 262.2)" />
+          </g>
+          <circle cx="210" cy="210" r="8" class="gear-hub" />
+        </g>
+
+        <g class="gear gear-sm gear-sm-a">
+          <circle cx="120" cy="150" r="30" class="gear-body-alt" />
+          <g class="gear-teeth-alt">
+            <rect x="117" y="116" width="6" height="10" />
+            <rect x="117" y="174" width="6" height="10" />
+            <rect x="86" y="147" width="10" height="6" />
+            <rect x="144" y="147" width="10" height="6" />
+          </g>
+        </g>
+
+        <g class="gear gear-sm gear-sm-b">
+          <circle cx="300" cy="290" r="22" class="gear-body-alt" />
+          <g class="gear-teeth-alt">
+            <rect x="297" y="264" width="6" height="9" />
+            <rect x="297" y="317" width="6" height="9" />
+            <rect x="270" y="287" width="9" height="6" />
+            <rect x="320" y="287" width="9" height="6" />
+          </g>
+        </g>
+
+        <g class="hand-group">
+          <line x1="210" y1="210" x2="210" y2="70" class="hand-second" />
+        </g>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ============ COLLECTION ============ -->
+  <section class="section wrap" id="collection" aria-labelledby="collection-title">
+    <div class="section-head reveal">
+      <span class="section-index">Collection</span>
+      <h2 id="collection-title">Trois pièces, une idée</h2>
+      <p class="section-lead">
+        Trois lectures du même principe : rendre visible ce qui, ailleurs,
+        se dissimule sous un cadran plein.
+      </p>
+    </div>
+
+    <div class="pieces">
+      <!-- Solstice -->
+      <article class="piece reveal">
+        <div class="piece-visual">
+          <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="100" cy="100" r="86" class="dial-rim" />
+            <circle cx="100" cy="100" r="72" class="dial-face" />
+            <g class="sunray">
+              <line x1="100" y1="100" x2="100" y2="30" transform="rotate(0 100 100)" />
+              <line x1="100" y1="100" x2="100" y2="30" transform="rotate(30 100 100)" />
+              <line x1="100" y1="100" x2="100" y2="30" transform="rotate(60 100 100)" />
+              <line x1="100" y1="100" x2="100" y2="30" transform="rotate(90 100 100)" />
+              <line x1="100" y1="100" x2="100" y2="30" transform="rotate(120 100 100)" />
+              <line x1="100" y1="100" x2="100" y2="30" transform="rotate(150 100 100)" />
+              <line x1="100" y1="100" x2="100" y2="30" transform="rotate(180 100 100)" />
+              <line x1="100" y1="100" x2="100" y2="30" transform="rotate(210 100 100)" />
+              <line x1="100" y1="100" x2="100" y2="30" transform="rotate(240 100 100)" />
+              <line x1="100" y1="100" x2="100" y2="30" transform="rotate(270 100 100)" />
+              <line x1="100" y1="100" x2="100" y2="30" transform="rotate(300 100 100)" />
+              <line x1="100" y1="100" x2="100" y2="30" transform="rotate(330 100 100)" />
+            </g>
+            <line x1="100" y1="100" x2="100" y2="52" class="piece-hand-h" />
+            <line x1="100" y1="100" x2="138" y2="100" class="piece-hand-m" />
+            <circle cx="100" cy="100" r="3.5" class="piece-hub" />
+          </svg>
+        </div>
+        <div class="piece-body">
+          <div class="piece-head">
+            <h3>Solstice</h3>
+            <span class="piece-ref">RG&#8209;014&#8209;SL</span>
+          </div>
+          <p>
+            Cadran ouvert, guilloché soleil, aiguilles bâton. La lecture du
+            temps ramenée à l'essentiel.
+          </p>
+          <span class="piece-price">1 890 €</span>
+        </div>
+      </article>
+
+      <!-- Nadir -->
+      <article class="piece reveal">
+        <div class="piece-visual">
+          <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="100" cy="100" r="86" class="dial-rim" />
+            <circle cx="100" cy="100" r="72" class="dial-face dial-face-plain" />
+            <line x1="100" y1="30" x2="100" y2="42" class="nadir-index" />
+            <line x1="100" y1="100" x2="100" y2="56" class="piece-hand-h" />
+            <line x1="100" y1="100" x2="132" y2="118" class="piece-hand-m" />
+            <circle cx="100" cy="100" r="3.5" class="piece-hub" />
+          </svg>
+        </div>
+        <div class="piece-body">
+          <div class="piece-head">
+            <h3>Nadir</h3>
+            <span class="piece-ref">RG&#8209;022&#8209;ND</span>
+          </div>
+          <p>
+            Un seul index, deux aiguilles, aucune fioriture. Le minimalisme
+            comme parti pris, pas comme absence d'idée.
+          </p>
+          <span class="piece-price">1 590 €</span>
+        </div>
+      </article>
+
+      <!-- Arcane -->
+      <article class="piece reveal">
+        <div class="piece-visual">
+          <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="100" cy="100" r="86" class="dial-rim" />
+            <circle cx="100" cy="100" r="72" class="dial-face-skeleton" />
+            <circle cx="100" cy="100" r="46" class="arcane-ring" />
+            <circle cx="100" cy="70" r="15" class="arcane-ring" />
+            <circle cx="128" cy="122" r="11" class="arcane-ring" />
+            <circle cx="72" cy="122" r="9" class="arcane-ring" />
+            <line x1="100" y1="100" x2="100" y2="58" class="piece-hand-h" />
+            <line x1="100" y1="100" x2="126" y2="100" class="piece-hand-m" />
+            <circle cx="100" cy="100" r="3.5" class="piece-hub" />
+          </svg>
+        </div>
+        <div class="piece-body">
+          <div class="piece-head">
+            <h3>Arcane</h3>
+            <span class="piece-ref">RG&#8209;031&#8209;AR</span>
+          </div>
+          <p>
+            Squelette intégral. Le mouvement, entièrement à nu, devient le
+            motif.
+          </p>
+          <span class="piece-price">2 450 €</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ PHILOSOPHIE ============ -->
+  <section class="section wrap philo" id="philosophie" aria-labelledby="philo-title">
+    <div class="philo-copy reveal">
+      <span class="section-index">Philosophie</span>
+      <h2 id="philo-title">Le mécanisme, à découvert.</h2>
+      <p>
+        La plupart des montres cachent ce qui les fait fonctionner. Chez
+        Rouage, c'est l'inverse&nbsp;: chaque pièce est pensée pour que le
+        mouvement — barillet, balancier, échappement — reste visible, presque
+        à hauteur de peau.
+      </p>
+      <p>
+        Ce parti pris impose une contrainte simple&nbsp;: rien ne peut être
+        approximatif, puisque rien n'est dissimulé. C'est cette exigence,
+        plus qu'un savoir-faire hérité, qui définit la maison.
+      </p>
+    </div>
+
+    <div class="philo-diagram reveal" aria-hidden="true">
+      <svg viewBox="-30 -20 440 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="190" cy="190" r="150" class="diagram-ring" />
+        <circle cx="190" cy="190" r="94" class="diagram-ring" />
+
+        <circle cx="190" cy="130" r="22" class="diagram-part" />
+        <line x1="212" y1="118" x2="270" y2="86" class="leader" />
+        <text x="274" y="82" class="leader-label">Balancier</text>
+
+        <circle cx="140" cy="220" r="16" class="diagram-part" />
+        <line x1="126" y1="232" x2="70" y2="270" class="leader" />
+        <text x="66" y="286" class="leader-label" text-anchor="end">Échappement</text>
+
+        <circle cx="238" cy="228" r="26" class="diagram-part" />
+        <line x1="260" y1="244" x2="316" y2="284" class="leader" />
+        <text x="320" y="288" class="leader-label">Barillet</text>
+
+        <path
+          d="M190 190 m-40,0 a40,40 0 1,0 80,0 a40,40 0 1,0 -80,0"
+          class="diagram-spring"
+        />
+        <line x1="150" y1="150" x2="98" y2="106" class="leader" />
+        <text x="94" y="98" class="leader-label" text-anchor="end">Ressort moteur</text>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ============ ATELIER / DISCLAIMER ============ -->
+  <section class="section wrap atelier" id="atelier" aria-labelledby="atelier-title">
+    <div class="atelier-card reveal">
+      <span class="section-index">Atelier</span>
+      <h2 id="atelier-title">Un projet, pas (encore) une maison.</h2>
+      <p>
+        Rouage est un <strong>projet fictif</strong>, conçu à titre de
+        démonstration par <strong>Eloi Dupasquier</strong>, développeur web
+        indépendant — aucune pièce n'est réellement commercialisée.
+      </p>
+      <a href="https://edupasquier.me" class="btn btn-primary" target="_blank" rel="noopener">
+        Un projet similaire pour votre activité <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="section wrap" id="contact" aria-labelledby="contact-title">
+    <div class="contact-block reveal">
+      <span class="section-index">Contact</span>
+      <h2 id="contact-title">Sur rendez-vous uniquement.</h2>
+      <p class="section-lead">
+        Rouage ne dispose pas de boutique ouverte au public — les pièces se
+        découvrent sur présentation, en atelier.
+      </p>
+    </div>
+  </section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <a href="#top" class="logo">
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="16" cy="16" r="10.5" stroke="currentColor" stroke-width="1.1" />
+          <circle cx="16" cy="16" r="2" fill="currentColor" />
+        </svg>
+      </span>
+      <span class="logo-text">ROUAGE</span>
+    </a>
+
+    <nav class="footer-nav" aria-label="Navigation pied de page">
+      <a href="#collection">Collection</a>
+      <a href="#philosophie">Philosophie</a>
+      <a href="#atelier">Atelier</a>
+    </nav>
+
+    <p class="footer-disclaimer">
+      Projet de démonstration conçu par
+      <a href="https://edupasquier.me" target="_blank" rel="noopener">Eloi Dupasquier</a>
+      — © <span id="year">2026</span>. Rouage n'est pas une marque commerciale réelle.
+    </p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
