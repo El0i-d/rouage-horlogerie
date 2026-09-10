@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="fr">
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Collection — Rouage</title>
@@ -82,28 +84,39 @@
 
   <section class="section-tight">
     <div class="wrap">
-      <div class="collection-grid">
+      <div class="collection-grid" data-stagger="0.09">
         <article class="piece-card reveal">
           <div class="dial-wrap">
-            <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <circle cx="100" cy="100" r="92" class="dial-rim" />
-              <circle cx="100" cy="100" r="84" class="dial-rim-inner" />
-              <circle cx="100" cy="100" r="76" class="dial-face" />
-              <g class="sunray" data-sunray data-cx="100" data-cy="100" data-outer="70" data-count="90"></g>
-              <g class="dial-minute" data-ticks data-cx="100" data-cy="100" data-outer="72" data-len="3" data-skip-major="true"></g>
-              <line x1="100" y1="28" x2="100" y2="40" class="dial-index" />
-              <line x1="172" y1="100" x2="160" y2="100" class="dial-index" />
-              <line x1="100" y1="172" x2="100" y2="160" class="dial-index" />
-              <line x1="28" y1="100" x2="40" y2="100" class="dial-index" />
-              <circle cx="100" cy="138" r="18" class="subdial" />
-              <text x="100" y="72" class="dial-text">ROUAGE</text>
-              <g data-live-hands data-cx="100" data-cy="100">
-                <line x1="100" y1="100" x2="100" y2="56" class="hand-h" />
-                <line x1="100" y1="100" x2="100" y2="38" class="hand-m" />
-                <line x1="100" y1="112" x2="100" y2="34" class="hand-s" />
+            <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" role="img"
+               aria-label="Montre Solstice : cadran guilloché soleil, index appliqués et petite seconde à six heures">
+            <path d="M82 31 L82 15 Q82 8 89 8 L111 8 Q118 8 118 15 L118 31" class="case-lug" />
+            <path d="M82 169 L82 185 Q82 192 89 192 L111 192 Q118 192 118 185 L118 169" class="case-lug" />
+            <path d="M173 92 L187 94 L187 106 L173 108 Z" class="case-crown" />
+            <g class="case-crown-grain">
+              <line x1="176" y1="95.5" x2="185" y2="96.5" />
+              <line x1="176" y1="100" x2="185" y2="100" />
+              <line x1="176" y1="104.5" x2="185" y2="103.5" />
+            </g>
+            <circle cx="100" cy="100" r="77" class="case-outer" />
+            <circle cx="100" cy="100" r="70" class="case-bezel" />
+            <circle cx="100" cy="100" r="64" class="dial-face" />
+            <g class="sunray" data-sunray data-cx="100" data-cy="100" data-outer="60" data-count="120"></g>
+            <g class="dial-minute" data-ticks data-cx="100" data-cy="100" data-outer="61" data-len="2.6" data-skip-major="true"></g>
+            <g class="index-applique" data-applique data-cx="100" data-cy="100" data-outer="58" data-len="8" data-w="2.8"></g>
+            <circle cx="100" cy="128" r="15" class="subdial" />
+            <g class="dial-minute" data-ticks data-cx="100" data-cy="128" data-outer="13.5" data-len="2.4"></g>
+            <circle cx="100" cy="128" r="1.6" class="dial-hub" />
+            <text x="100" y="78" class="dial-text">ROUAGE</text>
+            <g data-live-hands data-cx="100" data-cy="100">
+              <path class="hand-h" d="M97.2 104 L98.7 58 L101.3 58 L102.8 104 Z" />
+              <path class="hand-m" d="M97.9 104 L99.1 41 L100.9 41 L102.1 104 Z" />
+              <g class="hand-s">
+                <line x1="100" y1="112" x2="100" y2="37" />
+                <circle cx="100" cy="110" r="3.4" />
               </g>
-              <circle cx="100" cy="100" r="3.6" class="dial-hub" />
-            </svg>
+            </g>
+            <circle cx="100" cy="100" r="3" class="dial-hub" />
+          </svg>
           </div>
           <p class="piece-eyebrow">Cadran guilloché</p>
           <h3>Solstice</h3>
@@ -115,19 +128,28 @@
 
         <article class="piece-card reveal reveal-d1">
           <div class="dial-wrap">
-            <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <circle cx="100" cy="100" r="92" class="dial-rim" />
-              <circle cx="100" cy="100" r="84" class="dial-rim-inner" />
-              <circle cx="100" cy="100" r="76" class="dial-face-lacquer" />
-              <g class="dial-minute" data-ticks data-cx="100" data-cy="100" data-outer="72" data-len="3" data-skip-major="true"></g>
-              <line x1="100" y1="28" x2="100" y2="42" class="dial-index" />
-              <text x="100" y="128" class="dial-text-sm">AUTOMATIQUE</text>
-              <g data-live-hands data-cx="100" data-cy="100">
-                <line x1="100" y1="100" x2="100" y2="58" class="hand-h" />
-                <line x1="100" y1="100" x2="100" y2="40" class="hand-m" />
-              </g>
-              <circle cx="100" cy="100" r="3.6" class="dial-hub" />
-            </svg>
+            <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" role="img"
+               aria-label="Montre Nadir : cadran laqué noir, index unique à midi, deux aiguilles">
+            <path d="M82 31 L82 15 Q82 8 89 8 L111 8 Q118 8 118 15 L118 31" class="case-lug" />
+            <path d="M82 169 L82 185 Q82 192 89 192 L111 192 Q118 192 118 185 L118 169" class="case-lug" />
+            <path d="M173 92 L187 94 L187 106 L173 108 Z" class="case-crown" />
+            <g class="case-crown-grain">
+              <line x1="176" y1="95.5" x2="185" y2="96.5" />
+              <line x1="176" y1="100" x2="185" y2="100" />
+              <line x1="176" y1="104.5" x2="185" y2="103.5" />
+            </g>
+            <circle cx="100" cy="100" r="77" class="case-outer" />
+            <circle cx="100" cy="100" r="70" class="case-bezel" />
+            <circle cx="100" cy="100" r="64" class="dial-face-lacquer" />
+            <g class="dial-minute" data-ticks data-cx="100" data-cy="100" data-outer="61" data-len="2.6" data-skip-major="true"></g>
+            <g class="index-applique" data-applique data-cx="100" data-cy="100" data-outer="58" data-len="11" data-w="3.2" data-only="0"></g>
+            <text x="100" y="146" class="dial-text-sm">AUTOMATIQUE</text>
+            <g data-live-hands data-cx="100" data-cy="100">
+              <path class="hand-h" d="M97.2 104 L98.7 58 L101.3 58 L102.8 104 Z" />
+              <path class="hand-m" d="M97.9 104 L99.1 41 L100.9 41 L102.1 104 Z" />
+            </g>
+            <circle cx="100" cy="100" r="3" class="dial-hub" />
+          </svg>
           </div>
           <p class="piece-eyebrow">Laque noire</p>
           <h3>Nadir</h3>
@@ -139,23 +161,38 @@
 
         <article class="piece-card reveal reveal-d2">
           <div class="dial-wrap">
-            <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <circle cx="100" cy="100" r="92" class="dial-rim" />
-              <circle cx="100" cy="100" r="84" class="dial-rim-inner" />
-              <circle cx="100" cy="100" r="76" class="dial-face-open" />
-              <g class="dial-minute" data-ticks data-cx="100" data-cy="100" data-outer="72" data-len="3" data-skip-major="true"></g>
-              <circle cx="100" cy="100" r="48" class="skeleton-ring" />
-              <circle cx="100" cy="66" r="16" class="skeleton-ring" />
-              <circle cx="130" cy="124" r="12" class="skeleton-ring" />
-              <circle cx="70" cy="124" r="10" class="skeleton-ring" />
-              <line x1="100" y1="28" x2="100" y2="40" class="dial-index" />
-              <g data-live-hands data-cx="100" data-cy="100">
-                <line x1="100" y1="100" x2="100" y2="58" class="hand-h" />
-                <line x1="100" y1="100" x2="100" y2="42" class="hand-m" />
-                <line x1="100" y1="110" x2="100" y2="36" class="hand-s" />
+            <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" role="img"
+               aria-label="Montre Arcane : mouvement squelette apparent, sans cadran plein">
+            <path d="M82 31 L82 15 Q82 8 89 8 L111 8 Q118 8 118 15 L118 31" class="case-lug" />
+            <path d="M82 169 L82 185 Q82 192 89 192 L111 192 Q118 192 118 185 L118 169" class="case-lug" />
+            <path d="M173 92 L187 94 L187 106 L173 108 Z" class="case-crown" />
+            <g class="case-crown-grain">
+              <line x1="176" y1="95.5" x2="185" y2="96.5" />
+              <line x1="176" y1="100" x2="185" y2="100" />
+              <line x1="176" y1="104.5" x2="185" y2="103.5" />
+            </g>
+            <circle cx="100" cy="100" r="77" class="case-outer" />
+            <circle cx="100" cy="100" r="70" class="case-bezel" />
+            <circle cx="100" cy="100" r="64" class="dial-face-open" />
+            <g class="dial-minute" data-ticks data-cx="100" data-cy="100" data-outer="61" data-len="2.6" data-skip-major="true"></g>
+            <circle cx="100" cy="100" r="41" class="skeleton-ring" />
+            <path class="gear-teeth-path-alt" data-gear data-cx="100" data-cy="100" data-ro="41" data-ri="36" data-teeth="40" data-ratio="0.4" />
+            <circle cx="100" cy="72" r="13" class="skeleton-ring" />
+            <path class="gear-teeth-path-alt" data-gear data-cx="100" data-cy="72" data-ro="13" data-ri="10" data-teeth="18" data-ratio="0.42" />
+            <circle cx="125" cy="122" r="10" class="skeleton-ring" />
+            <circle cx="75" cy="122" r="8" class="skeleton-ring" />
+            <path class="spiral-balancier" data-spiral data-cx="75" data-cy="122" data-r0="1.6" data-r1="6.6" data-turns="4" />
+            <g class="index-applique" data-applique data-cx="100" data-cy="100" data-outer="58" data-len="8" data-w="2.6" data-sparse="true"></g>
+            <g data-live-hands data-cx="100" data-cy="100">
+              <path class="hand-h" d="M97.2 104 L98.7 58 L101.3 58 L102.8 104 Z" />
+              <path class="hand-m" d="M97.9 104 L99.1 41 L100.9 41 L102.1 104 Z" />
+              <g class="hand-s">
+                <line x1="100" y1="112" x2="100" y2="37" />
+                <circle cx="100" cy="110" r="3.4" />
               </g>
-              <circle cx="100" cy="100" r="3.6" class="dial-hub" />
-            </svg>
+            </g>
+            <circle cx="100" cy="100" r="3" class="dial-hub" />
+          </svg>
           </div>
           <p class="piece-eyebrow">Squelette intégral</p>
           <h3>Arcane</h3>
@@ -232,3 +269,4 @@
 </footer>
 
 <script src="script.js"></script>
+</html>

@@ -4,6 +4,11 @@
 (function () {
   "use strict";
 
+  /* Sans JavaScript, aucun contenu ne doit rester masqué : la mise
+     en retrait des éléments révélés n'est appliquée que si ce
+     marqueur est posé. */
+  document.documentElement.classList.add("js-anim");
+
   const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const SVG_NS = "http://www.w3.org/2000/svg";
 
@@ -230,6 +235,44 @@
     g.appendChild(frag);
   });
 
+  /* Index appliqués : rapportés puis fixés un à un sur le cadran.
+     Chaque index est un quadrilatère plus une arête centrale — c'est
+     ce filet de lumière qui distingue un index appliqué d'un imprimé. */
+  document.querySelectorAll("[data-applique]").forEach((g) => {
+    const cx = num(g, "cx", 100), cy = num(g, "cy", 100);
+    const outer = num(g, "outer", 58), len = num(g, "len", 8), w = num(g, "w", 2.8);
+    const seul = g.dataset.only !== undefined ? parseInt(g.dataset.only, 10) : null;
+    const clairseme = g.dataset.sparse === "true";
+
+    const frag = document.createDocumentFragment();
+    for (let i = 0; i < 12; i++) {
+      if (seul !== null && i !== seul) continue;
+      if (clairseme && i % 3 !== 0) continue;
+      const a = ((i * 30 - 90) * Math.PI) / 180;
+      const cardinal = i % 3 === 0;
+      const L = cardinal ? len * 1.3 : len;
+      const demi = (cardinal ? w : w * 0.72) / 2;
+      const ux = Math.cos(a), uy = Math.sin(a);
+      const px = -uy, py = ux;
+      const pt = (r, o) => `${(cx + ux * r + px * o).toFixed(2)} ${(cy + uy * r + py * o).toFixed(2)}`;
+
+      const corps = document.createElementNS(SVG_NS, "path");
+      corps.setAttribute("class", "index-corps");
+      corps.setAttribute("d",
+        `M${pt(outer, -demi)}L${pt(outer, demi)}L${pt(outer - L, demi)}L${pt(outer - L, -demi)}Z`);
+      frag.appendChild(corps);
+
+      const arete = document.createElementNS(SVG_NS, "line");
+      arete.setAttribute("class", "index-arete");
+      const [x1, y1] = pt(outer, 0).split(" ");
+      const [x2, y2] = pt(outer - L, 0).split(" ");
+      arete.setAttribute("x1", x1); arete.setAttribute("y1", y1);
+      arete.setAttribute("x2", x2); arete.setAttribute("y2", y2);
+      frag.appendChild(arete);
+    }
+    g.appendChild(frag);
+  });
+
   /* Perlage : cercles de grainage se recouvrant sur la platine.
      Posé en quinconce, comme au tour à perler. */
   document.querySelectorAll("[data-perlage]").forEach((g) => {
@@ -298,6 +341,18 @@
   });
 
   /* ---------------------------------------------------------
+     Échelonnement automatique des enfants d'un bloc révélé.
+     Évite d'écrire une classe de délai sur chaque élément.
+     --------------------------------------------------------- */
+  document.querySelectorAll("[data-stagger]").forEach((bloc) => {
+    const pas = parseFloat(bloc.dataset.stagger) || 0.07;
+    [...bloc.children].forEach((enfant, i) => {
+      enfant.classList.add("reveal");
+      enfant.style.transitionDelay = `${(i * pas).toFixed(3)}s`;
+    });
+  });
+
+  /* ---------------------------------------------------------
      Révélations au défilement
      --------------------------------------------------------- */
   const revealEls = document.querySelectorAll(".reveal");
@@ -316,6 +371,107 @@
       { threshold: 0.1, rootMargin: "0px 0px -6% 0px" }
     );
     revealEls.forEach((el) => io.observe(el));
+
+    /* Filet de sécurité : si l'observateur n'a rien signalé, tout
+       élément déjà présent à l'écran est révélé malgré tout. Un
+       contenu invisible serait bien pire qu'une animation manquée. */
+    setTimeout(() => {
+      revealEls.forEach((el) => {
+        if (el.classList.contains("in")) return;
+        const b = el.getBoundingClientRect();
+        if (b.top < window.innerHeight && b.bottom > 0) el.classList.add("in");
+      });
+    }, 1200);
+  }
+
+  /* ---------------------------------------------------------
+     Fil de progression : un trait de laiton sous l'en-tête.
+     Créé en JavaScript pour ne pas alourdir les huit pages.
+     --------------------------------------------------------- */
+  (function fil() {
+    const barre = document.createElement("div");
+    barre.className = "scroll-progress";
+    barre.setAttribute("aria-hidden", "true");
+    document.body.appendChild(barre);
+    let enAttente = false;
+    const maj = () => {
+      const total = document.documentElement.scrollHeight - window.innerHeight;
+      barre.style.transform = `scaleX(${total > 0 ? window.scrollY / total : 0})`;
+      enAttente = false;
+    };
+    const planifier = () => {
+      if (enAttente) return;
+      enAttente = true;
+      requestAnimationFrame(maj);
+    };
+    maj();
+    window.addEventListener("scroll", planifier, { passive: true });
+    window.addEventListener("resize", planifier);
+  })();
+
+  /* ---------------------------------------------------------
+     Parallaxe discrète sur le mouvement de la page d'accueil.
+     Piloté par requestAnimationFrame : le gestionnaire de
+     défilement ne fait qu'enregistrer une position.
+     --------------------------------------------------------- */
+  const parallaxes = document.querySelectorAll("[data-parallax]");
+  if (parallaxes.length && !reduced) {
+    let enAttente = false;
+    const placer = () => {
+      const h = window.innerHeight;
+      parallaxes.forEach((el) => {
+        const facteur = parseFloat(el.dataset.parallax) || 0.06;
+        const b = el.getBoundingClientRect();
+        if (b.bottom < -200 || b.top > h + 200) return;
+        const centre = b.top + b.height / 2 - h / 2;
+        el.style.transform = `translate3d(0, ${(-centre * facteur).toFixed(1)}px, 0)`;
+      });
+      enAttente = false;
+    };
+    const planifier = () => {
+      if (enAttente) return;
+      enAttente = true;
+      requestAnimationFrame(placer);
+    };
+    placer();
+    window.addEventListener("scroll", planifier, { passive: true });
+    window.addEventListener("resize", planifier);
+  }
+
+  /* ---------------------------------------------------------
+     Chiffres qui se composent à l'entrée dans l'écran.
+     Le suffixe éventuel (« h », « s ») est conservé.
+     --------------------------------------------------------- */
+  const compteurs = document.querySelectorAll("[data-compte]");
+  if (compteurs.length) {
+    const animer = (el) => {
+      const cible = parseFloat(el.dataset.compte);
+      const suffixe = el.dataset.suffixe || "";
+      if (reduced || !Number.isFinite(cible)) {
+        el.textContent = cible.toLocaleString("fr-FR") + suffixe;
+        return;
+      }
+      const duree = 1100;
+      const debut = performance.now();
+      const pas = (t) => {
+        const p = Math.min((t - debut) / duree, 1);
+        const adouci = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(cible * adouci).toLocaleString("fr-FR") + suffixe;
+        if (p < 1) requestAnimationFrame(pas);
+      };
+      requestAnimationFrame(pas);
+    };
+
+    if (!("IntersectionObserver" in window)) {
+      compteurs.forEach(animer);
+    } else {
+      const ioNum = new IntersectionObserver((entries, obs) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) { animer(e.target); obs.unobserve(e.target); }
+        });
+      }, { threshold: 0.5 });
+      compteurs.forEach((el) => ioNum.observe(el));
+    }
   }
 
   /* ---------------------------------------------------------
